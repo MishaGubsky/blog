@@ -1,0 +1,19 @@
+<div>
+  <form ng-submit="newPost()" style="margin-top:30px;">
+    <h3>New post</h3>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="title" ng-model="postName"/>
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="text" ng-model="postBody"/>
+    </div>
+    <div>
+      <select ng-model="selectedHeading" ng-options="h.id as h.title for h in headings">
+      </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Post</button>
+  </form>
+</div>
