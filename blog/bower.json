@@ -5,8 +5,8 @@
       "angular": "latest",
       "angular-route": "latest",
       "angular-resource": "latest",
-      "angular-cookies": "latest"
-
+      "angular-cookies": "latest",
+      "angular-devise": "latest"
     }
   },
   "vendor": {

@@ -1,7 +1,8 @@
 angular.module('project', [
     'ngResource',
     'ngRoute',
-    'templates'
+    'templates',
+    'Devise'
 ])
     .config(function ($routeProvider) {
         $routeProvider
