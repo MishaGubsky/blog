@@ -1,0 +1,25 @@
+<nav class="nav nav-pills">
+  <div class="constainer">
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li ng-show="user"><a href="#/post/new">Add post</a></li>
+      <li ng-show="user"><a href="#/heading/new">Add heading</a></li>
+
+      <li ng-show="user"><a ng-controller="UserCtrl" ng-click='signOut()'>Sign out</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div>
+  <form ng-submit="newHeading()" style="margin-top:30px;">
+    <h3>New heading</h3>
+
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="title" ng-model="Title"/>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Post</button>
+  </form>
+</div>

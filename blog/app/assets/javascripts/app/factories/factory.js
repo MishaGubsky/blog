@@ -9,8 +9,9 @@ angular.module('project')
             post.getPost = function (postId) {
                 return $resource('/posts/' + postId + '.json').get({id: postId})
             };
-            post.addComment = function (postId, newComment) {
+            post.addComment = function (postId, newComment, callback) {
                 return comment.save({post_id: postId}, newComment, function (response) {
+                    callback(response);
                 }, function (error) {
                     console.log(error);
                 });

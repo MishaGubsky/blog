@@ -1,3 +1,16 @@
+<nav class="nav nav-pills">
+  <div class="constainer">
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li ng-show="user"><a href="#/post/new">Add post</a></li>
+      <li ng-show="user.role == 'admin'"><a href="#/heading/new">Add heading</a></li>
+
+      <li ng-show="user"><a ng-controller="UserCtrl" ng-click='signOut()'>Sign out</a></li>
+    </ul>
+  </div>
+</nav>
+
+
 <div>
   <form ng-submit="newPost()" style="margin-top:30px;">
     <h3>New post</h3>
@@ -8,12 +21,9 @@
     <div class="form-group">
       <input type="text" class="form-control" placeholder="text" ng-model="postBody"/>
     </div>
-    <div>
-      <select ng-model="selectedHeading" ng-options="h.id as h.title for h in headings">
-      </select>
+    <div ng-repeat="h in headings">
+      <input type="radio" class="radioButtons" value="{{h.id}}">{{h.title}}</input>
     </div>
-
-
     <button type="submit" class="btn btn-primary">Post</button>
   </form>
 </div>

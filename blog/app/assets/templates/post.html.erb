@@ -1,3 +1,17 @@
+<nav class="nav nav-pills">
+  <div class="constainer">
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li ng-show="user"><a href="#/post/new">Add post</a></li>
+      <li ng-show="user.role == 'admin'"><a href="#/heading/new">Add heading</a></li>
+      <li ng-show="!user"><a ng-href="#/login">Sign in</a></li>
+      <li ng-show="user"><a ng-controller="UserCtrl" ng-click='signOut()'>Sign out</a></li>
+      <li ng-show="!user"><a ng-href="#/registration">Register</a></li>
+
+    </ul>
+  </div>
+</nav>
+
 <h1>{{post.name}}</h1>
   <div>
     {{post.body}}
@@ -13,7 +27,8 @@
   <ul ng-repeat="comment in post.comments">
     <li>{{comment.body}}</li>
   </ul>
-  <form ng-submit="addComment()" style="margin-top:30px;">
+
+  <form ng-show="user.role" ng-submit="addComment()" style="margin-top:30px;">
     <h3>Add a new comment</h3>
     <div class="form-group">
       <input type="text" class="form-control" placeholder="Comment" ng-model="comment_body">

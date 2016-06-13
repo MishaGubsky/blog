@@ -1,3 +1,18 @@
+<nav class="nav nav-pills">
+  <div class="constainer">
+    <ul>
+      <li><a href="#/">Home</a></li>
+      <li ng-show="user"><a href="#/post/new">Add post</a></li>
+      <li ng-show="user.role == 'admin'"><a href="#/heading/new">Add heading</a></li>
+
+      <li ng-show="!user"><a ng-href="#/login">Sign in</a></li>
+      <li ng-show="user"><a ng-controller="UserCtrl" ng-click='signOut()'>Sign out</a></li>
+      <li ng-show="!user"><a ng-href="#/registration">Register</a></li>
+    </ul>
+  </div>
+</nav>
+
+
 <form ng-submit="submitLogin(loginForm)" role="form" ng-init="loginForm = {}">
   <div class="form-group">
     <label for="email">Email</label>
@@ -21,8 +36,3 @@
 
   <button type="submit" class="btn btn-primary btn-lg">Sign in</button>
 </form>
-
-<p></p>
-<div>
-  <a ng-href="#/registration">Registration</a>
-</div>

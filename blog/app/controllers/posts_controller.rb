@@ -28,6 +28,12 @@ class PostsController < ApplicationController
     puts params[:body]
 
     if @post.save
+      heading_ids = params[:headings]
+      heading_ids.each do |id|
+        @heading = Heading.find(id)
+        @post.headings << @heading
+      end
+      @post.save
       render json: @post, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity

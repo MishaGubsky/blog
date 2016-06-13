@@ -5,7 +5,7 @@ angular.module('project')
         'factory',
         'Auth',
         function ($scope, $location, factory, Auth) {
-            console.log(Auth.isAuthenticated());
+            $scope.user = Auth._currentUser;
             $scope.posts = factory.posts.query();
             $scope.selectPost = function (id) {
                 $location.path('/post/'+id);

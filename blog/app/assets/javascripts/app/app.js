@@ -25,6 +25,10 @@ angular.module('project', [
             .when('/registration', {
                 templateUrl: 'registration.html',
                 controller: 'UserCtrl'
+            })
+            .when('/heading/new', {
+                templateUrl: 'headingForm.html',
+                controller: 'HeadCtrl'
             });
     });
 
