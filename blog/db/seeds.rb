@@ -6,8 +6,8 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 5.times do
-  Post.create(name: Faker::Hipster.word, body: LoremIpsum.lorem_ipsum(paragraphs: 3))
-  Heading.create(title: Faker::Book.title)
+  Post.create(name: Faker::Book.title.capitalize, body: LoremIpsum.lorem_ipsum(paragraphs: 3))
+  Heading.create(title: Faker::Hipster.word.capitalize)
   Comment.create(body: Faker::Hipster.sentence)
   User.create(email: Faker::Internet.email, password: Faker::Internet.password)
 end

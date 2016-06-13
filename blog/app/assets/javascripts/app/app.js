@@ -2,7 +2,8 @@ angular.module('project', [
     'ngResource',
     'ngRoute',
     'templates',
-    'Devise'
+    'Devise',
+    "ui.bootstrap"
 ])
     .config(function ($routeProvider) {
         $routeProvider

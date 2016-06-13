@@ -11,6 +11,8 @@
 // about supported directives.
 //
 //= require angular
+//= require angular-ui-bootstrap
+//= require angular-bootstrap
 //= require angular-route
 //= require angular-cookies
 //= require angular-rails-templates
